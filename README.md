@@ -1,6 +1,6 @@
 # Para mi Ague 💌
 
-Carta de cumpleaños interactiva para mi abuelita.
+Ague.
 
 ## Cómo verla
 
