@@ -122,6 +122,7 @@
 
       const cap = document.createElement('figcaption');
       cap.textContent = foto.pie || '';
+      if (foto.pie) fig.classList.add('polaroid--con-pie');
 
       fig.appendChild(img);
       fig.appendChild(cap);

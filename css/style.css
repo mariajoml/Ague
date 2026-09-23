@@ -495,41 +495,46 @@ body.is-open .carta{ opacity: 1; }
 
 /* ===================== GALERÍA ===================== */
 .galeria{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 26px 20px;
+  column-count: 3;
+  column-gap: 20px;
   margin-top: 3em;
   padding: 10px 0 20px;
 }
 
 .polaroid{
+  break-inside: avoid;
+  width: 100%;
+  margin: 0 0 24px;
   background: #FFFDF8;
-  padding: 11px 11px 40px;
+  padding: 10px 10px 12px;
   border-radius: 3px;
   box-shadow: 0 8px 20px var(--sombra);
   cursor: pointer;
   border: 0;
   font-family: var(--mano);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--tinta-suave);
   text-align: center;
   transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s;
   opacity: 0;
 }
 .polaroid.visible{ opacity: 1; }
-.polaroid:nth-child(3n+1){ transform: rotate(-2.2deg); }
-.polaroid:nth-child(3n+2){ transform: rotate(1.6deg); }
-.polaroid:nth-child(3n+3){ transform: rotate(-.8deg); }
-.polaroid:hover{ transform: rotate(0deg) translateY(-8px) scale(1.035); box-shadow: 0 20px 38px rgba(57,46,38,.24); z-index: 5; }
+.polaroid:nth-child(3n+1){ transform: rotate(-1.8deg); }
+.polaroid:nth-child(3n+2){ transform: rotate(1.4deg); }
+.polaroid:nth-child(3n+3){ transform: rotate(-.7deg); }
+.polaroid:hover{ transform: rotate(0deg) translateY(-6px) scale(1.03); box-shadow: 0 20px 38px rgba(57,46,38,.24); position: relative; z-index: 5; }
 
+/* la foto conserva su propio formato: nada de recortes */
 .polaroid img{
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
   background: var(--papel-hondo);
   border-radius: 1px;
 }
+/* el margen ancho de polaroid solo cuando hay algo escrito */
+.polaroid--con-pie{ padding-bottom: 38px; }
 .polaroid figcaption{ margin-top: 12px; line-height: 1.2; }
+.polaroid:not(.polaroid--con-pie) figcaption{ display: none; }
 
 .polaroid--vacia{
   display: grid; place-items: center;
@@ -753,7 +758,9 @@ body.is-open .carta{ opacity: 1; }
   .leccion{ min-height: 112px; padding: 16px 14px; }
   .leccion__front{ font-size: 1.05rem; }
   .leccion::after{ font-size: 1.12rem; padding: 16px 14px; }
-  .galeria{ grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 18px 14px; }
+  .galeria{ column-count: 2; column-gap: 14px; }
+  .polaroid{ margin-bottom: 16px; padding: 7px 7px 9px; }
+  .polaroid--con-pie{ padding-bottom: 28px; }
   .cita{ padding: 34px 6%; }
   .lightbox{ grid-template-columns: 46px 1fr 46px; }
   .lightbox__nav{ font-size: 2.2rem; }

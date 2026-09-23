@@ -1,4 +1,27 @@
 /* generado por fotos.sh — no editar a mano.
    Para cambiar los pies de foto, edita fotos/pies.txt */
 window.FOTOS = [
+  { "src": "fotos/ague-01.jpg", "pie": "" },
+  { "src": "fotos/ague-02.jpg", "pie": "" },
+  { "src": "fotos/ague-03.jpg", "pie": "" },
+  { "src": "fotos/ague-04.jpg", "pie": "" },
+  { "src": "fotos/ague-05.jpg", "pie": "" },
+  { "src": "fotos/ague-06.jpg", "pie": "" },
+  { "src": "fotos/ague-07.jpg", "pie": "" },
+  { "src": "fotos/ague-08.jpg", "pie": "" },
+  { "src": "fotos/ague-09.jpg", "pie": "" },
+  { "src": "fotos/ague-10.jpg", "pie": "" },
+  { "src": "fotos/ague-11.jpg", "pie": "" },
+  { "src": "fotos/ague-12.jpg", "pie": "" },
+  { "src": "fotos/ague-13.jpg", "pie": "" },
+  { "src": "fotos/ague-14.jpg", "pie": "" },
+  { "src": "fotos/ague-15.jpg", "pie": "" },
+  { "src": "fotos/ague-16.jpg", "pie": "" },
+  { "src": "fotos/ague-17.jpg", "pie": "" },
+  { "src": "fotos/ague-18.jpg", "pie": "" },
+  { "src": "fotos/ague-19.jpg", "pie": "" },
+  { "src": "fotos/ague-20.jpg", "pie": "" },
+  { "src": "fotos/ague-21.jpg", "pie": "" },
+  { "src": "fotos/ague-22.jpg", "pie": "" },
+  { "src": "fotos/ague-23.jpg", "pie": "" },
 ];
