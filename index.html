@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para mi Ague</title>
+<meta name="description" content="Una carta de cumpleaños para mi abuelita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Caveat:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+</head>
+<body class="is-sealed">
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- ===== ESCENA 1: EL SOBRE ===== -->
+<section id="sobre" class="sobre">
+  <div class="sobre__inner">
+    <p class="sobre__kicker">para la mujer más elegante que conozco</p>
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir la carta">
+      <div class="envelope__back"></div>
+      <div class="envelope__letter">
+        <span class="envelope__letter-line"></span>
+        <span class="envelope__letter-line"></span>
+        <span class="envelope__letter-line short"></span>
+      </div>
+      <div class="envelope__front"></div>
+      <div class="envelope__flap"></div>
+      <div class="envelope__seal" aria-hidden="true"><span>A</span></div>
+    </div>
+    <h1 class="sobre__title">Ague</h1>
+    <button class="btn-abrir" id="btnAbrir">Abrir la carta</button>
+  </div>
+</section>
+
+<!-- ===== ESCENA 2: LA HOJA QUE SE DESDOBLA ===== -->
+<div class="unfold" id="unfold" aria-hidden="true">
+  <div class="unfold__sheet" id="unfoldSheet">
+
+    <div class="unfold__panel unfold__panel--top">
+      <div class="unfold__cara">
+        <span class="ln"></span><span class="ln"></span><span class="ln w60"></span>
+      </div>
+      <div class="unfold__reverso"></div>
+    </div>
+
+    <div class="unfold__panel unfold__panel--mid">
+      <div class="unfold__cara">
+        <p class="unfold__saludo">Ague,</p>
+        <span class="ln"></span><span class="ln"></span><span class="ln w80"></span>
+        <span class="ln"></span><span class="ln w40"></span>
+      </div>
+    </div>
+
+    <div class="unfold__panel unfold__panel--bottom">
+      <div class="unfold__cara">
+        <span class="ln"></span><span class="ln w70"></span>
+        <p class="unfold__firma">Majo</p>
+      </div>
+      <div class="unfold__reverso"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CONTROLES FIJOS ===== -->
+<div class="hud" id="hud">
+  <button class="hud__btn" id="btnMusica" aria-label="Poner música" title="Música">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  </button>
+  <div class="hud__progress" aria-hidden="true"><span id="progressBar"></span></div>
+</div>
+
+<!-- ===== LA CARTA ===== -->
+<main class="carta" id="carta" aria-hidden="true">
+  <article class="hoja">
+
+    <header class="hoja__head reveal">
+      <p class="fecha" id="fecha">Bogotá, hoy</p>
+      <h2 class="saludo">Ague,</h2>
+    </header>
+
+    <section class="bloque">
+      <p class="reveal">Hace mucho tiempo que no me siento a escribirte.</p>
+      <p class="reveal">La última carta que te escribí fue para pedirte que, por favor, me tuvieran en cuenta para regalarme un <em>Furby</em>. Jaja. Todavía me acuerdo de la letra gigante y de lo segura que estaba de mis argumentos.</p>
+      <p class="reveal">Esta vez no vengo a pedirte nada.</p>
+      <p class="reveal">Vengo a escribirte todo el amor que te tengo, y resulta que es mucho más difícil de lo que pensé: no cabe en una hoja, ni en una carta, ni en un cumpleaños. Pero algo hay que intentar.</p>
+    </section>
+
+    <div class="separador reveal" aria-hidden="true">
+      <svg viewBox="0 0 120 12" width="120" height="12"><path d="M2 6 Q 20 0, 38 6 T 74 6 T 110 6" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="118" cy="6" r="1.6" fill="currentColor"/></svg>
+    </div>
+
+    <section class="bloque">
+      <h3 class="bloque__titulo reveal">Gracias</h3>
+      <p class="reveal">Gracias por estar siempre para mí. Y no «siempre» de frase bonita: siempre de verdad. A la hora que sea, el día que sea, con el problema que sea.</p>
+      <p class="reveal">Gracias por estar atenta. Por darte cuenta antes de que yo diga nada, por preguntar lo que hay que preguntar y por quedarte callada justo cuando toca quedarse callada.</p>
+      <p class="reveal">Gracias por enseñarme algo todos los días sin que nunca se sienta como una lección.</p>
+      <p class="reveal">Gracias por escucharme cuando lo necesito, que casi nunca es el mismo momento en que lo pido.</p>
+      <p class="reveal">Y gracias por salvarme en todas las situaciones que se han podido presentar. En <strong>todas</strong>, Ague. Tú sabes bien cuáles, y sabes que yo también me acuerdo.</p>
+    </section>
+
+    <section class="bloque bloque--ancho">
+      <h3 class="bloque__titulo reveal">Lo que aprendí de ti</h3>
+      <p class="reveal">De ti he aprendido muchas cosas que me han servido a lo largo de mi vida, y sobre todo en estos últimos años.</p>
+      <p class="reveal">Y no me las enseñaste sentándome a explicármelas. Me las enseñaste viviendo delante de mí, que es como se aprende lo que de verdad se queda.</p>
+      <p class="reveal">Estas son las once que tengo más presentes. Toca cada una.</p>
+
+      <div class="lecciones" id="lecciones">
+        <button class="leccion" data-back="Estar siempre arreglada y a la altura de lo que hago. No para que me miren: para saber yo que estoy bien parada.">
+          <span class="leccion__num">01</span><span class="leccion__front">Siempre a la altura</span>
+        </button>
+        <button class="leccion" data-back="No perder nunca la esencia de agradecer. Por lo grande y por lo diminuto, aunque nadie más lo note.">
+          <span class="leccion__num">02</span><span class="leccion__front">Agradecer</span>
+        </button>
+        <button class="leccion" data-back="Ser atenta con las personas que me rodean, y que se les note sin que yo tenga que decirlo.">
+          <span class="leccion__num">03</span><span class="leccion__front">Ser atenta</span>
+        </button>
+        <button class="leccion" data-back="Darme mi lugar. Siempre. Sin pedir permiso y sin tener que levantar la voz.">
+          <span class="leccion__num">04</span><span class="leccion__front">Darme mi lugar</span>
+        </button>
+        <button class="leccion leccion--joya" data-back="Y usarla cuando es necesario, con toda la elegancia del mundo. Esta es mi favorita, no te voy a mentir. Jaja.">
+          <span class="leccion__num">05</span><span class="leccion__front">La cachetada de guante blanco</span>
+        </button>
+        <button class="leccion" data-back="La importancia de perdonar. Aunque cueste, aunque tarde, y aunque nadie esté mirando.">
+          <span class="leccion__num">06</span><span class="leccion__front">Perdonar</span>
+        </button>
+        <button class="leccion" data-back="No contaminarme. No dejar que lo feo de afuera se me meta para adentro ni me cambie el carácter.">
+          <span class="leccion__num">07</span><span class="leccion__front">No contaminarme</span>
+        </button>
+        <button class="leccion" data-back="Actuar siempre bajo la razón, incluso cuando el corazón está hablando durísimo.">
+          <span class="leccion__num">08</span><span class="leccion__front">Actuar bajo la razón</span>
+        </button>
+        <button class="leccion" data-back="Tu constancia en el trabajo, y en hacer lo que me gusta sin soltarlo apenas se pone difícil.">
+          <span class="leccion__num">09</span><span class="leccion__front">Constancia</span>
+        </button>
+        <button class="leccion" data-back="Tener siempre una sonrisa. Tú entras a un lugar y se nota antes de que digas una sola palabra.">
+          <span class="leccion__num">10</span><span class="leccion__front">La sonrisa</span>
+        </button>
+        <button class="leccion" data-back="Actuar siempre de la manera más correcta. Sobre todo cuando la otra manera era la fácil.">
+          <span class="leccion__num">11</span><span class="leccion__front">Hacer lo correcto</span>
+        </button>
+      </div>
+      <p class="lecciones__contador reveal"><span id="contadorLecciones">0</span> de 11 descubiertas</p>
+    </section>
+
+    <section class="cita reveal">
+      <blockquote>
+        <p>Tu manera de amar es muy amplia: ayudar a todos cuando se puede, estar ahí cuando te necesitan, y nunca, nunca olvidarte de quién eres.</p>
+        <footer>espero poder amar así el resto de mi vida</footer>
+      </blockquote>
+    </section>
+
+    <section class="bloque">
+      <h3 class="bloque__titulo reveal">Lo que te prometo</h3>
+      <p class="reveal">Voy a ayudar a todos cuando pueda, y a estar ahí cuando me necesiten, sin perderme yo en el camino. Eso último es lo difícil, y tú lo haces ver fácil.</p>
+      <p class="reveal">Voy a seguir agradeciendo, aunque esté de afán.</p>
+      <p class="reveal">Voy a seguir dándome mi lugar, aunque incomode.</p>
+      <p class="reveal">Voy a seguir escogiendo lo correcto por encima de lo cómodo.</p>
+      <p class="reveal">Y voy a seguir llegando a todas partes con la sonrisa que aprendí de ti.</p>
+    </section>
+
+    <section class="bloque bloque--ancho">
+      <h3 class="bloque__titulo reveal">Nosotras</h3>
+      <p class="reveal">Un ratico de todo lo que llevamos vivido. Hay fotos donde yo estoy chiquita y tú estás exactamente igual — eso también lo heredaste bien. Toca una para verla grande.</p>
+      <div class="galeria" id="galeria"></div>
+    </section>
+
+    <section class="pastel-sec" id="pastelSec">
+      <h3 class="bloque__titulo reveal">Ahora sí: pide un deseo</h3>
+      <p class="reveal pastel-sec__hint" id="pastelHint">Toca las velitas para apagarlas</p>
+
+      <div class="pastel" id="pastel" role="group" aria-label="Pastel con velitas">
+        <div class="velas" id="velas"></div>
+        <div class="pastel__top"></div>
+        <div class="pastel__piso pastel__piso--1"><span class="goteo"></span></div>
+        <div class="pastel__piso pastel__piso--2"><span class="goteo"></span></div>
+        <div class="pastel__plato"></div>
+      </div>
+
+      <div class="deseo" id="deseo" hidden>
+        <p class="deseo__texto">Hoy es tu cumpleaños, Ague, y yo solo quiero que sepas una cosa:</p>
+        <p class="deseo__grande">todo lo bueno que tengo<br>tiene algo tuyo adentro.</p>
+      </div>
+    </section>
+
+    <footer class="firma">
+      <p class="firma__feliz reveal">Feliz cumpleaños</p>
+      <p class="firma__nombre reveal">Ague</p>
+      <p class="firma__te-amo reveal">Gracias por tantos años de estar.<br>Te amo muchísimo,</p>
+      <p class="firma__yo reveal">Majo</p>
+      <button class="btn-relanzar" id="btnRelanzar">soltar más corazones</button>
+    </footer>
+
+  </article>
+</main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__cerrar" id="lbCerrar" aria-label="Cerrar">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">&#8249;</button>
+  <figure class="lightbox__fig">
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Siguiente">&#8250;</button>
+</div>
+
+<audio id="audio" loop preload="none" src="audio/cancion.mp3"></audio>
+
+<script src="fotos/fotos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
